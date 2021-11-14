@@ -1,11 +1,10 @@
-
 function component() {
-	  const element = document.createElement('div');
+  const element = document.createElement('div');
 
-	  // lodash£¨Ä¿Ç°Í¨¹ıÒ»¸ö script ÒıÈë£©¶ÔÓÚÖ´ĞĞÕâÒ»ĞĞÊÇ±ØĞèµÄ
-	//   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-	//
-	//     return element;
-	//     }
-	//
-	//     document.body.appendChild(component());
+  // lodashï¼ˆç›®å‰é€šè¿‡ä¸€ä¸ª script å¼•å…¥ï¼‰å¯¹äºæ‰§è¡Œè¿™ä¸€è¡Œæ˜¯å¿…éœ€çš„
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+  return element;
+}
+
+document.body.appendChild(component());
