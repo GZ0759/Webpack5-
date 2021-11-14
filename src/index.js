@@ -1,12 +1,38 @@
 import _ from 'lodash';
+import './style.css';
+import Icon from './icon.svg';
+import Data from './data.xml';
+import Notes from './data.csv';
+import toml from './data.toml';
+import yaml from './data.yaml';
+import json from './data.json5';
 
- function component() {
-   const element = document.createElement('div');
+console.log(toml.title); // output `TOML Example`
+console.log(toml.owner.name); // output `Tom Preston-Werner`
 
-  // lodash 在当前 script 中使用 import 引入
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+console.log(yaml.title); // output `YAML Example`
+console.log(yaml.owner.name); // output `Tom Preston-Werner`
 
-   return element;
- }
+console.log(json.title); // output `JSON5 Example`
+console.log(json.owner.name); // output `Tom Preston-Werner`
 
- document.body.appendChild(component());
+function component() {
+  const element = document.createElement('div');
+
+  // Lodash, now imported by this script
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.classList.add('hello');
+
+  // 将图像添加到我们已经存在的 div 中。
+  const myIcon = new Image();
+  myIcon.src = Icon;
+
+  element.appendChild(myIcon);
+
+  console.log(Data);
+  console.log(Notes);
+
+  return element;
+}
+
+document.body.appendChild(component());
